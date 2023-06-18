@@ -1,4 +1,3 @@
-<?php
 @extends('admin.layouts.main')
 @section('content')
     <!-- Content Wrapper. Contains page content -->
@@ -26,7 +25,9 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    Категории
+                    <div class="col-12">
+                        Категории
+                    </div>
                     <!-- ./col -->
                 </div>
 
@@ -36,9 +37,5 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
-
-
-
-
 
 

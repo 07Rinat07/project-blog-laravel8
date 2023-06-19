@@ -27,12 +27,12 @@
                 <div class="row">
 
                     <div class="col-12">
-                        <form action="{{ route('admin.post.update',  $category->id ) }}" method="post" class="w-25">
+                        <form action="{{ route('admin.post.update',  $post->id ) }}" method="post" class="w-25">
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
                                 <input type="text" class="form-control" name="title" placeholder="Редактирование названия поста"
-                                value="{{ $category->title }}">
+                                value="{{ $post->title }}">
                                 @error('title')
                                     <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror

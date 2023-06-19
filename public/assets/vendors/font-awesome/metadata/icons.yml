@@ -20190,7 +20190,7 @@ user-slash:
 user-tag:
   changes:
     - 5.0.11
-  label: User Tag
+  label: User tag
   search:
     terms:
       - avatar

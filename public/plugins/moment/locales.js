@@ -2330,7 +2330,7 @@
         var format = {
             m: ['eine Minute', 'einer Minute'],
             h: ['eine Stunde', 'einer Stunde'],
-            d: ['ein Tag', 'einem Tag'],
+            d: ['ein tag', 'einem tag'],
             dd: [number + ' Tage', number + ' Tagen'],
             w: ['eine Woche', 'einer Woche'],
             M: ['ein Monat', 'einem Monat'],
@@ -2403,7 +2403,7 @@
         var format = {
             m: ['eine Minute', 'einer Minute'],
             h: ['eine Stunde', 'einer Stunde'],
-            d: ['ein Tag', 'einem Tag'],
+            d: ['ein tag', 'einem tag'],
             dd: [number + ' Tage', number + ' Tagen'],
             w: ['eine Woche', 'einer Woche'],
             M: ['ein Monat', 'einem Monat'],
@@ -2476,7 +2476,7 @@
         var format = {
             m: ['eine Minute', 'einer Minute'],
             h: ['eine Stunde', 'einer Stunde'],
-            d: ['ein Tag', 'einem Tag'],
+            d: ['ein tag', 'einem tag'],
             dd: [number + ' Tage', number + ' Tagen'],
             w: ['eine Woche', 'einer Woche'],
             M: ['ein Monat', 'einem Monat'],

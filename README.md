@@ -7,6 +7,7 @@
 
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=70&duration=4000&pause=7&color=0C2AF7&center=true&vCenter=true&multiline=true&width=1400&height=220&lines=PROJECT-BLOG-LARAVEL-8.83" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=70&duration=4000&pause=7&color=0C2AF7&center=true&vCenter=true&multiline=true&width=1400&height=220&lines=practical skills!" alt="Typing SVG" /></a>
 
 
 

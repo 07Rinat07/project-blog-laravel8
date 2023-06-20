@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">  Добавление поста</h1>
+                        <h1 class="m-0"> Добавление поста</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -31,10 +31,10 @@
                             @csrf
                             <div class="form-group w-25">
                                 <input type="text" class="form-control" name="title" placeholder="Название поста"
-                                value="{{ old('title') }}"
+                                       value="{{ old('title') }}"
                                 >
                                 @error('title')
-                                    <div class="text-danger">Это поле необходимо для заполнения</div>
+                                <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -58,8 +58,15 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group w-50">
+                                <label>Выберите категорию</label>
+                                <select name="category_id" class="form-control">
+                                    @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{$category->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputFile">Добавить главное изображение</label>
                                 <div class="input-group">
                                     <div class="custom-file">
@@ -73,7 +80,7 @@
                             </div>
 
                             <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Добавить">
+                                <input type="submit" class="btn btn-primary" value="Добавить">
                             </div>
                         </form>
                     </div>

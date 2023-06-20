@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 20 2023 г., 15:44
+-- Время создания: Июн 20 2023 г., 22:37
 -- Версия сервера: 5.7.39
 -- Версия PHP: 7.4.30
 
@@ -40,11 +40,14 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Природа', '2023-06-20 09:24:21', '2023-06-20 09:24:21', NULL),
-(2, 'Новости айти', '2023-06-20 09:25:58', '2023-06-20 09:25:58', NULL),
-(3, 'Спорт', '2023-06-20 09:26:14', '2023-06-20 09:26:14', NULL),
-(4, 'Рецепты', '2023-06-20 09:26:24', '2023-06-20 09:26:24', NULL),
-(5, 'Фото и видео', '2023-06-20 09:26:37', '2023-06-20 09:26:37', NULL);
+(1, 'Природа', '2023-06-20 14:11:32', '2023-06-20 14:11:32', NULL),
+(2, 'Путешествия', '2023-06-20 14:11:43', '2023-06-20 14:11:43', NULL),
+(3, 'Авто', '2023-06-20 14:11:51', '2023-06-20 14:11:51', NULL),
+(4, 'Море', '2023-06-20 14:11:57', '2023-06-20 14:11:57', NULL),
+(5, 'Домашнии питомцы', '2023-06-20 14:12:07', '2023-06-20 14:12:07', NULL),
+(6, 'Новости', '2023-06-20 14:12:16', '2023-06-20 14:12:16', NULL),
+(7, 'юмор', '2023-06-20 14:12:22', '2023-06-20 14:12:22', NULL),
+(8, 'селфи', '2023-06-20 14:12:29', '2023-06-20 14:12:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -79,16 +82,16 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(10, '2014_10_12_000000_create_users_table', 1),
-(11, '2014_10_12_100000_create_password_resets_table', 1),
-(12, '2019_08_19_000000_create_failed_jobs_table', 1),
-(13, '2023_06_16_164531_create_categories_table', 1),
-(14, '2023_06_16_165449_create_posts_table', 1),
-(15, '2023_06_16_165610_create_tags_table', 1),
-(16, '2023_06_16_165818_create_post_tags_table', 1),
-(17, '2023_06_19_140806_add_soft_delete_to_tags_table', 1),
-(18, '2023_06_20_055743_add_columns_for_images_to_posts_table', 1),
-(20, '2023_06_20_121727_add_column_soft_deletes_to_categories_table', 2);
+(21, '2014_10_12_000000_create_users_table', 1),
+(22, '2014_10_12_100000_create_password_resets_table', 1),
+(23, '2019_08_19_000000_create_failed_jobs_table', 1),
+(24, '2023_06_16_164531_create_categories_table', 1),
+(25, '2023_06_16_165449_create_posts_table', 1),
+(26, '2023_06_16_165610_create_tags_table', 1),
+(27, '2023_06_16_165818_create_post_tags_table', 1),
+(28, '2023_06_19_140806_add_soft_delete_to_tags_table', 1),
+(29, '2023_06_20_055743_add_columns_for_images_to_posts_table', 1),
+(30, '2023_06_20_121727_add_column_soft_deletes_to_categories_table', 1);
 
 -- --------------------------------------------------------
 
@@ -124,8 +127,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `content`, `category_id`, `created_at`, `updated_at`, `preview_image`, `main_image`) VALUES
-(1, 'второй пост', 'лалаллаа', 1, '2023-06-20 09:24:59', '2023-06-20 09:27:15', 'images/0jWQzFdmR4ub9FwMdjpWayHZfjnmG9xDENjvDzK4.jpg', 'images/QdpuP8x7VdxDh4UyCJkyJYHHfovuFyoATlVpUwhC.jpg'),
-(2, 'новый тест1', 'амаы', 5, '2023-06-20 09:28:43', '2023-06-20 09:29:26', 'images/8j5gw3kcxEZWFhxUzMysbSQNFDrZQ3ea8ruBZ9Zi.jpg', 'images/dgTrwFxp0jtGDfph5ZFkUKKaVlC4F4QmFH7RmQzB.jpg');
+(1, 'test', 'fvdsvfd', 2, '2023-06-20 16:18:16', '2023-06-20 16:18:16', 'images/Y8U1qwtcEWcKlBFuXM1X2Pw3P2K0T4sGX0zuEDQh.jpg', 'images/Qy3bznGp5e1Ko79UXWoIaEpb38Ssq7jHaeTwJsvI.jpg'),
+(2, 'Прогулка', 'fvdsvfd', 2, '2023-06-20 16:24:40', '2023-06-20 16:28:51', 'images/gvVDJ8Y8RPFXgR60fSWhdK1nbLLFQlDnE2JJ0hdL.jpg', 'images/EkfLeZKxYmfP5NuZMkQ3VDALjv1UJ0zxsaHF5pLT.jpg'),
+(3, 'Отдых', 'домашнии мурки итд', 4, '2023-06-20 16:36:01', '2023-06-20 16:36:31', 'images/np6bjHycQ99QsqlenW8ZZtIzVjNnT0sUnLLIG1oQ.jpg', 'images/KrOC9VFfuMxOiN0d8EVpWflsMeluhGyiLivE30gQ.jpg');
 
 -- --------------------------------------------------------
 
@@ -140,6 +144,17 @@ CREATE TABLE `post_tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `post_tags`
+--
+
+INSERT INTO `post_tags` (`id`, `post_id`, `tag_id`, `created_at`, `updated_at`) VALUES
+(1, 2, 3, NULL, NULL),
+(2, 2, 6, NULL, NULL),
+(3, 3, 2, NULL, NULL),
+(4, 3, 6, NULL, NULL),
+(5, 3, 7, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -160,8 +175,13 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'tagtest', '2023-06-20 09:20:48', '2023-06-20 09:20:48', NULL),
-(2, 'новый тэг', '2023-06-20 09:29:02', '2023-06-20 09:29:02', NULL);
+(1, 'питомцы', '2023-06-20 14:12:53', '2023-06-20 14:12:53', NULL),
+(2, 'пейзаж', '2023-06-20 14:13:07', '2023-06-20 14:13:07', NULL),
+(3, 'горы', '2023-06-20 14:13:15', '2023-06-20 14:13:15', NULL),
+(4, 'в горах', '2023-06-20 14:14:07', '2023-06-20 14:14:16', '2023-06-20 14:14:16'),
+(5, 'животные', '2023-06-20 14:14:31', '2023-06-20 14:14:31', NULL),
+(6, 'селфи', '2023-06-20 14:14:38', '2023-06-20 14:14:38', NULL),
+(7, 'видеосьемка и фотографии интересных мест', '2023-06-20 14:15:06', '2023-06-20 14:15:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -245,7 +265,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -257,25 +277,25 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `post_tags`
 --
 ALTER TABLE `post_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

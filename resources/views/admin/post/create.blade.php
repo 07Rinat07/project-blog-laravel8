@@ -61,16 +61,7 @@
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
-                                <label>Выберите категорию</label>
-                                <select name="category_id" class="form-control">
-                                    @foreach($categories as $category)
-                                        <option
-                                            value="{{ $category->id }}" {{ $category->id == old('category_id') ? 'selected' : '' }}
-                                        >{{$category->title}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+
                             <div class="form-group w-50">
                                 <label for="exampleInputFile">Добавить главное изображение</label>
                                 <div class="input-group">
@@ -85,9 +76,28 @@
                                 @error('main_image')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
-
                             </div>
 
+                            <div class="form-group w-50">
+                                <label>Выберите категорию</label>
+                                <select name="category_id" class="form-control">
+                                    @foreach($categories as $category)
+                                        <option
+                                            value="{{ $category->id }}" {{ $category->id == old('category_id') ? 'selected' : '' }}
+                                        >{{$category->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group w-50">
+                                <label>Тэги</label>
+                                <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выберите тэги" style="width: 100%">
+                                   @foreach($tags as $tag)
+                                        <option {{ is_array( old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? ' selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                   @endforeach
+
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Добавить">
                             </div>

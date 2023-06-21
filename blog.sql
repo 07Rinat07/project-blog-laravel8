@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 20 2023 г., 22:37
+-- Время создания: Июн 21 2023 г., 23:18
 -- Версия сервера: 5.7.39
 -- Версия PHP: 7.4.30
 
@@ -91,7 +91,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (27, '2023_06_16_165818_create_post_tags_table', 1),
 (28, '2023_06_19_140806_add_soft_delete_to_tags_table', 1),
 (29, '2023_06_20_055743_add_columns_for_images_to_posts_table', 1),
-(30, '2023_06_20_121727_add_column_soft_deletes_to_categories_table', 1);
+(30, '2023_06_20_121727_add_column_soft_deletes_to_categories_table', 1),
+(32, '2023_06_21_074131_add_soft_deletes_to_posts_table', 2),
+(34, '2023_06_21_193603_add_soft_deletes_to_users_table', 3);
 
 -- --------------------------------------------------------
 
@@ -119,17 +121,19 @@ CREATE TABLE `posts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `preview_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `main_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `main_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `content`, `category_id`, `created_at`, `updated_at`, `preview_image`, `main_image`) VALUES
-(1, 'test', 'fvdsvfd', 2, '2023-06-20 16:18:16', '2023-06-20 16:18:16', 'images/Y8U1qwtcEWcKlBFuXM1X2Pw3P2K0T4sGX0zuEDQh.jpg', 'images/Qy3bznGp5e1Ko79UXWoIaEpb38Ssq7jHaeTwJsvI.jpg'),
-(2, 'Прогулка', 'fvdsvfd', 2, '2023-06-20 16:24:40', '2023-06-20 16:28:51', 'images/gvVDJ8Y8RPFXgR60fSWhdK1nbLLFQlDnE2JJ0hdL.jpg', 'images/EkfLeZKxYmfP5NuZMkQ3VDALjv1UJ0zxsaHF5pLT.jpg'),
-(3, 'Отдых', 'домашнии мурки итд', 4, '2023-06-20 16:36:01', '2023-06-20 16:36:31', 'images/np6bjHycQ99QsqlenW8ZZtIzVjNnT0sUnLLIG1oQ.jpg', 'images/KrOC9VFfuMxOiN0d8EVpWflsMeluhGyiLivE30gQ.jpg');
+INSERT INTO `posts` (`id`, `title`, `content`, `category_id`, `created_at`, `updated_at`, `preview_image`, `main_image`, `deleted_at`) VALUES
+(2, 'Прогулка', 'fvdsvfd', 4, '2023-06-20 16:24:40', '2023-06-21 04:35:37', 'images/fQ7CdZMdrJmpNLf20v0270vYh2IBwObEkoUqcxX9.jpg', 'images/790UkfwJUMuKitShdN2GT36excjNTdzS92hxzgN8.jpg', NULL),
+(3, 'Отдых', 'домашнии мурки итд', 4, '2023-06-20 16:36:01', '2023-06-21 04:45:15', 'images/np6bjHycQ99QsqlenW8ZZtIzVjNnT0sUnLLIG1oQ.jpg', 'images/KrOC9VFfuMxOiN0d8EVpWflsMeluhGyiLivE30gQ.jpg', '2023-06-21 04:45:15'),
+(4, 'testagain1', 'eeeeew', 2, '2023-06-21 06:21:47', '2023-06-21 06:29:16', 'images/5m3ChfWPtSQNjKJtYQ7NwQEuoRfU7cHvPW9YLt8o.jpg', 'images/HoqUhBHu5Qj5aYIbclQx0rfBm1uEP5MLvB6HGrwx.jpg', NULL),
+(5, 'Test post2', 'test content1', 2, '2023-06-21 11:14:01', '2023-06-21 16:03:00', 'images/SxokALpX3qxW61UcUvbmvwA4xPsJhVsVs11iHIjK.jpg', 'images/gUx6LzCSbfx6GMlxy1OG3CJxuLq7ZCCyD9shRU60.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -154,7 +158,12 @@ INSERT INTO `post_tags` (`id`, `post_id`, `tag_id`, `created_at`, `updated_at`) 
 (2, 2, 6, NULL, NULL),
 (3, 3, 2, NULL, NULL),
 (4, 3, 6, NULL, NULL),
-(5, 3, 7, NULL, NULL);
+(5, 3, 7, NULL, NULL),
+(6, 2, 2, NULL, NULL),
+(7, 4, 3, NULL, NULL),
+(8, 4, 7, NULL, NULL),
+(9, 5, 3, NULL, NULL),
+(11, 5, 7, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -181,7 +190,8 @@ INSERT INTO `tags` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VAL
 (4, 'в горах', '2023-06-20 14:14:07', '2023-06-20 14:14:16', '2023-06-20 14:14:16'),
 (5, 'животные', '2023-06-20 14:14:31', '2023-06-20 14:14:31', NULL),
 (6, 'селфи', '2023-06-20 14:14:38', '2023-06-20 14:14:38', NULL),
-(7, 'видеосьемка и фотографии интересных мест', '2023-06-20 14:15:06', '2023-06-20 14:15:06', NULL);
+(7, 'видеосьемка и фотографии интересных мест', '2023-06-20 14:15:06', '2023-06-20 14:15:06', NULL),
+(8, 'weather', '2023-06-21 16:04:35', '2023-06-21 16:04:35', NULL);
 
 -- --------------------------------------------------------
 
@@ -197,8 +207,17 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(2, 'Nametest', 'test@gmail.com', NULL, '$2y$10$WxdJ93Y..df/VxN44aOaxeYk250fcx7p20FSa0GqVQXS9OdlXCPXW', NULL, '2023-06-21 16:41:10', '2023-06-21 16:41:14', '2023-06-21 16:41:14'),
+(3, 'Bob', 'bob@gmail.com', NULL, '$2y$10$436.73.D0aYHNXFAGGBuruGQWU3nAPuLrLMNWD/OJRFIVejhPu8ae', NULL, '2023-06-21 16:58:40', '2023-06-21 17:14:53', NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -277,31 +296,31 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `post_tags`
 --
 ALTER TABLE `post_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

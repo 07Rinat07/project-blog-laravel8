@@ -17,7 +17,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+
+    <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/aos/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }} ">
+
+
 </head>
 <body>
 <div id="app">

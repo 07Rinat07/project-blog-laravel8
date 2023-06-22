@@ -18,8 +18,6 @@
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
-        <!-- /.content-header -->
-
         <!-- Category content -->
         <section class="content">
             <div class="container-fluid">
@@ -37,7 +35,6 @@
                                     <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
-
                             <div class="form-group">
                                 <input type="text"  value="{{ $user->email}}" class="form-control" name="email" placeholder="Email">
                                 @error('email')
@@ -45,6 +42,23 @@
                                 @enderror
                             </div>
 
+                            <div class="form-group w-50">
+                                <label>Выберите пользователя</label>
+                                <select name="role" class="form-control">
+                                    @foreach($roles as $id => $role)
+                                        <option
+                                            value="{{ $id }}" {{ $id == $user->role ? 'selected' : '' }}
+                                        >{{$role}}</option>
+                                    @endforeach
+                                </select>
+                                @error('role')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
+
+                            </div>
+                            <div class="form-group w-50">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            </div>
                             <input type="submit" class="btn btn-primary" value="Обновить">
                         </form>
                     </div>

@@ -7,12 +7,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">  Добавление категории</h1>
+                        <h1 class="m-0"> Добавление категории</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Главная</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.category.index') }}">Категории</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.category.create') }}">Добавление категории</a></li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -32,7 +33,7 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" name="title" placeholder="Название категории">
                                 @error('title')
-                                    <div class="text-danger">Это поле необходимо для заполнения</div>
+                                <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
                             <input type="submit" class="btn btn-primary" value="Добавить">

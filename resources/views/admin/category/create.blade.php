@@ -21,7 +21,7 @@
         </div>
         <!-- /.content-header -->
 
-        <!-- Category content -->
+        <!-- Comment content -->
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->

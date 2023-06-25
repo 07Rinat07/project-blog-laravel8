@@ -20,7 +20,7 @@
         </div>
         <!-- /.content-header -->
 
-        <!-- Category content -->
+        <!-- Comment content -->
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
@@ -54,38 +54,6 @@
                             <a href="{{ route('personal.comment.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-
-                    <!-- ./col -->
-{{--                    <div class="col-lg-3 col-6">--}}
-{{--                        <!-- small box -->--}}
-{{--                        <div class="small-box bg-warning">--}}
-{{--                            <div class="inner">--}}
-{{--                                <h3>{{ $data['categoriesCount'] }}</h3>--}}
-
-{{--                                <p>Категории</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="icon">--}}
-{{--                                <i class="nav-icon fas fa-th-list"></i>--}}
-{{--                            </div>--}}
-{{--                            <a href="{{ route('admin.category.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <!-- ./col -->--}}
-{{--                    <div class="col-lg-3 col-6">--}}
-{{--                        <!-- small box -->--}}
-{{--                        <div class="small-box bg-danger">--}}
-{{--                            <div class="inner">--}}
-{{--                                <h3>{{ $data['tagsCount'] }}</h3>--}}
-
-{{--                                <p>Тэги</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="icon">--}}
-{{--                                <i class="nav-icon fas fa-tags"></i>--}}
-{{--                            </div>--}}
-{{--                            <a href="{{ route('admin.tag.index') }}" class="small-box-footer">Подробнее <i class="fas fa-arrow-circle-right"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-                    <!-- ./col -->
                 </div>
 
             </div><!-- /.container-fluid -->
@@ -94,3 +62,4 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
+

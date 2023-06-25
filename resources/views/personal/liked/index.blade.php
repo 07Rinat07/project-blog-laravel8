@@ -19,7 +19,7 @@
         </div>
         <!-- /.content-header -->
 
-        <!-- Category content -->
+        <!-- Comment content -->
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
@@ -42,10 +42,8 @@
                                         <tr>
                                             <td>{{ $post->id }}</td>
                                             <td>{{ $post->title }}</td>
-                                            <td class="text-center"><a href="{{ route('personal.main.index', $post->id) }}"><i
+                                            <td class="text-center"><a href="{{ route('personal.liked.index', $post->id) }}"><i
                                                         class="far fa-eye"></i></a></td>
-                                            <td class="text-center"><a href="{{ route('personal.liked.index', $post->id) }}"
-                                                                       class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                             <td class="text-center">
                                                 <form action="{{ route('personal.liked.delete', $post->id) }}"
                                                       method="post">

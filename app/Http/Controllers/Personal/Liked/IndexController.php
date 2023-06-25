@@ -7,7 +7,7 @@ use App\Models\Post;
 
 class IndexController extends Controller
 {
-    public function __invoke(Post $post)
+    public function __invoke()
     {
        $posts = auth()->user()->likedPosts;
 //       dd($posts);

@@ -1,4 +1,4 @@
-<!-- Category Sidebar Container -->
+<!-- Comment Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
     <!-- Sidebar -->
@@ -34,11 +34,9 @@
                     </p>
                 </a>
             </li>
+        </ul>
     </div>
     <!-- /.sidebar -->
 </aside>
-
-
-
 
 

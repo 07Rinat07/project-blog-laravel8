@@ -10,10 +10,20 @@
                  with font-awesome or any other icon font library -->
 
             <li class="nav-item">
-                <a href="{{ route('personal.main.index') }}" class="nav-link">
+                <a href="{{ route('main.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-home"></i>
                     <p>
-                        Главная
+                        Главная страница сайта
+                    </p>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a href="{{ route('personal.main.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-solid fa-address-card"></i>
+                    <p>
+                       Личный кабинет
                     </p>
                 </a>
             </li>

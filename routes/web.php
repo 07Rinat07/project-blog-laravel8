@@ -13,13 +13,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::group(['namespace' => 'Main'], function () {
     Route::get('/', 'IndexController')->name('main.index');
 });
 Route::group(['namespace' => 'Post', 'prefix' => 'post'], function () {
     Route::get('/', 'IndexController')->name('post.index');
     Route::get('/{post}', 'ShowController')->name('post.show');
+    // post/10/comments --> nested rout
+    Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function ()
+    {
+        Route::post('/', 'StoreController')->name('post.comment.store');
+    });
+
+
 });
 
 

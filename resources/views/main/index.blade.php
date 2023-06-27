@@ -44,8 +44,6 @@
                     </section>
                 </div>
 
-
-
                 <div class="col-md-4 sidebar" data-aos="fade-left">
                     <div class="widget widget-post-list">
                         <h5 class="widget-title">Популярные посты</h5>

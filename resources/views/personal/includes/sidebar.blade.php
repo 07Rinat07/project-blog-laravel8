@@ -44,6 +44,14 @@
                     </p>
                 </a>
             </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.main.index') }}" class="nav-link">
+                        <i class="nav-icon  fa fa-user"></i>
+                        <p>
+                            Вход для Админа
+                        </p>
+                    </a>
+                </li>
         </ul>
     </div>
     <!-- /.sidebar -->

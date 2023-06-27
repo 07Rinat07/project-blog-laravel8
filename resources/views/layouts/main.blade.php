@@ -48,24 +48,22 @@
 <section class="edica-footer-banner-section">
     <div class="container">
         <div class="footer-banner" data-aos="fade-up">
-            <h1 class="banner-title">Website developed with LARAVEL </h1>
-{{--            <div class="banner-btns-wrapper">--}}
-{{--                <button class="btn btn-success"><img src="{{  asset('assets/images/apple@1x.svg') }} " alt="ios"--}}
-{{--                                                     class="mr-2"> App Store--}}
-{{--                </button>--}}
-{{--                <button class="btn btn-success"><img src="{{  asset('assets/images/android@1x.svg') }} " alt="android"--}}
-{{--                                                     class="mr-2"> Google Play--}}
-{{--                </button>--}}
-{{--            </div>--}}
-{{--            <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or--}}
-{{--                service.</p>--}}
+            <h1 class="banner-title">Website "BLOG" developed with</h1>
+            <h1 class="banner-title">LARAVEL</h1>
+            <div class="banner-btns-wrapper">
+                <button class="btn btn-success"> <a href="https://github.com/07Rinat07/project-blog-laravel8"><img src="{{  asset('assets/images/logoGithub.png') }} " alt="ios"
+                                                     class="mr-2"> GITHUB (Click me)
+                </button>
+
+            </div>
+            <p class="banner-text">The project with the source code is on GITHUB and if you  <br> are interested, you can see it by clicking on the links</p>
         </div>
     </div>
 </section>
-<footer class="edica-footer pt-1 pb-0 mb-0 mt-1 " data-aos="fade-up">
+<footer class="edica-footer pt-0 pb-0 mb-0 mt-0 " data-aos="fade-up">
     <div class="container">
-        <div class="row footer-widget-area pt-1 pb-1 mb-1 mt-1 ">
-            <div class="col-md-4 pb-0 mb-0"   >
+        <div class="row footer-widget-area pt-5 pb-1 mb-1 mt-5 ">
+            <div class="col-md-4  pt-2 mt-lg-2">
                 <a href="#!" class="footer-brand-wrapper">
                     <img src="{{ asset('assets/images/logo.png') }} " alt="myBlog logo">
                 </a>
@@ -105,7 +103,7 @@
 
 
         </div>
-        <div class="footer-bottom-content pt-3 pb-0 mb-0 mt-3">
+        <div class="footer-bottom-content pt-2 pb-0 mb-0 mt-2">
             <nav class="nav footer-bottom-nav ">
                 <a href="#!">My</a>
                 <a href="#!">Site</a>

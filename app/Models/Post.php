@@ -15,6 +15,7 @@ class Post extends Model
     protected $guarded = false;
 
     protected $withCount = [ 'likedUsers'];
+//    protected $with = ['category']; при очистке лишних запросов с помощью telescope laravel
 
     public function tags()
     {

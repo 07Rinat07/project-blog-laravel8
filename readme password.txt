@@ -1,1 +1,0 @@
-Ваш пароль: N5TJYZ0K60 (для bob@gmail.com)

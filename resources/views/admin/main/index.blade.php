@@ -44,7 +44,7 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>{{ $data['postsCount'] }}<sup style="font-size: 20px">%</sup></h3>
+                                <h3>{{ $data['postsCount'] }}<sup style="font-size: 20px"> человек</sup></h3>
 
                                 <p>Посты</p>
                             </div>

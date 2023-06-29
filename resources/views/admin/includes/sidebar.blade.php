@@ -52,6 +52,15 @@
             </li>
 
             <li class="nav-item">
+                <a href="{{ route('admin.comment.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-th-list"></i>
+                    <p>
+                        Комментарии
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a href="{{ route('admin.tag.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-tags"></i>
                     <p>

@@ -16,11 +16,14 @@ use Illuminate\Support\Str;
 
 class StoreController extends Controller
 {
-    public function __invoke(StoreRequest $request )
+    public function __invoke(StoreRequest $request)
     {
-        $data = $request->validated();
-
-        StoreUserJob::dispatch($data);
+        $data = $request->validated(); //данные пришедшие в случае успешной валидации
+        $password = Str::random(6); // пароль теперь генерируется в контроллере, из StoreRequest его нужно убрать
+        $data['password'] = Hash::make($password);
+        User::firstOrCreate(['email'=>$data['email']], $data);
+        // с помощью методов фасада Mail отправляем новый объект класса PasswordMail передав в его конструктор сгенерированный пароль
+        Mail::to($data['email'])->send(new PasswordMail($password));
 
         return redirect()->route('admin.user.index');
     }

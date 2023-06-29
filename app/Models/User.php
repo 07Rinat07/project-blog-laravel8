@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable // отключил временно для тестов implements MustVerifyEmail
 {
     use HasFactory, Notifiable, SoftDeletes;
 
@@ -57,10 +57,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function sendEmailVerificationNotification()
-    {
-        $this->notify(new  SendVerifyWithQueueNotification());
-    }
+//    public function sendEmailVerificationNotification()
+//    {
+//        $this->notify(new  SendVerifyWithQueueNotification());
+//    }
 
     public function likedPosts()
     {

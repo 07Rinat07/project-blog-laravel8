@@ -81,6 +81,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::delete('/{category}', 'DeleteController')->name('admin.category.delete');
     });
 
+    Route::group(['namespace' => 'Comment', 'prefix' => 'comments'], function () {
+        Route::get('/', 'IndexController')->name('admin.comment.index');
+
+        Route::get('/{comment}/edit', 'EditController')->name('admin.comment.edit');
+        Route::patch('/{comment}', 'UpdateController')->name('admin.comment.update');
+        Route::delete('/{comment}', 'DeleteController')->name('admin.comment.delete');
+    });
+
+
     Route::group(['namespace' => 'tag', 'prefix' => 'tags'], function () {
         Route::get('/', 'IndexController')->name('admin.tag.index');
         Route::get('/create', 'CreateController')->name('admin.tag.create');

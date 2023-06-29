@@ -67,7 +67,7 @@
                             <div class="comment-text mb-3">
                             <span class="username">
                                <div>
-                                   {{ $comment->user->name }}
+                                   {{ $post->liked_users_count}} //  баг был с такими зн $comment->user->name
                                </div>
                                 <span
                                     class="text-muted float-right">{{ $comment->dateAsCarbon->diffForHumans() }}</span>

@@ -90,7 +90,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     });
 
 
-    Route::group(['namespace' => 'tag', 'prefix' => 'tags'], function () {
+    Route::group(['namespace' => 'Tag', 'prefix' => 'tags'], function () {
         Route::get('/', 'IndexController')->name('admin.tag.index');
         Route::get('/create', 'CreateController')->name('admin.tag.create');
         Route::post('/', 'StoreController')->name('admin.tag.store');

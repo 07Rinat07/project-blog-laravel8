@@ -6,6 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Форма входа</div>
+                    <div class="card-header">Заполнить и войти  или зарегиться нажав
+                        <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
+                    </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

@@ -26,13 +26,13 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
 
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
-                                    <thead>
-                                    <tr>
+                                <table class="table table-hover text-nowrap ">
+                                    <thead >
+                                    <tr >
                                         <th>ID</th>
                                         <th>Название</th>
                                         <th colspan="2" class="text-center">Действия</th>

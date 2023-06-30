@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: srv-pleskdb42.ps.kz:3306
--- Время создания: Июн 30 2023 г., 00:33
+-- Время создания: Июн 30 2023 г., 15:19
 -- Версия сервера: 10.6.11-MariaDB
 -- Версия PHP: 8.0.28
 
@@ -66,6 +66,14 @@ CREATE TABLE `comments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `comments`
+--
+
+INSERT INTO `comments` (`id`, `user_id`, `post_id`, `message`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, 'С новым годом)', '2023-06-30 03:02:34', '2023-06-30 03:02:34'),
+(2, 2, 1, 'как ты бро', '2023-06-30 03:04:09', '2023-06-30 03:04:09');
 
 -- --------------------------------------------------------
 
@@ -234,6 +242,13 @@ CREATE TABLE `post_user_likes` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `post_user_likes`
+--
+
+INSERT INTO `post_user_likes` (`id`, `post_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -301,7 +316,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`, `role`) VALUES
-(1, 'admin', 'ura07srr@gmail.com', NULL, '$2y$10$RJ3MyNHCVxeccqkFWZMaKe72hpCQeJd77ZURBnzTm/P0TS8Sovos2', NULL, '2023-06-29 11:05:53', '2023-06-29 11:05:53', NULL, 1);
+(1, 'admin', 'ura07srr@gmail.com', NULL, '$2y$10$RJ3MyNHCVxeccqkFWZMaKe72hpCQeJd77ZURBnzTm/P0TS8Sovos2', NULL, '2023-06-29 11:05:53', '2023-06-29 11:05:53', NULL, 1),
+(2, 'Vasya S', 'volvo3@mail.ru', NULL, '$2y$10$oQRRLPIZHh30IwlhH7SvvusUhjcKGVzFF2j33i7IwUyRD9BDroaIO', NULL, '2023-06-30 02:58:32', '2023-06-30 02:58:32', NULL, NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -311,6 +327,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 -- Индексы таблицы `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `comments`
+--
+ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -386,6 +408,12 @@ ALTER TABLE `categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT для таблицы `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT для таблицы `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -419,7 +447,7 @@ ALTER TABLE `post_tags`
 -- AUTO_INCREMENT для таблицы `post_user_likes`
 --
 ALTER TABLE `post_user_likes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `tags`
@@ -431,7 +459,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

@@ -7,7 +7,7 @@
     <title>МОЙ БЛОГ</title>
     <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/aos/aos.css') }}">
+
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }} ">
     <script src="{{ asset('assets/vendors/jquery/jquery.min.js') }} "></script>
     <script src="{{ asset('assets/js/loader.js') }} "></script>
@@ -58,7 +58,7 @@
         <div class="footer-banner" data-aos="fade-up">
             <div class="banner-btns-wrapper">
                 <button class="btn btn-success"> <a href="https://github.com/07Rinat07/project-blog-laravel8"><img src="{{  asset('assets/images/logoGithub.png') }} " alt="ios"
-                                                     class="mr-2"> GITHUB (Click me)
+                                                                                                                   class="mr-2"> GITHUB (Click me)</a>
                 </button>
             </div>
             <p class="banner-text">The project with the source code is on GITHUB and if you  <br> are interested, you can see it by clicking on the links</p>
@@ -119,7 +119,7 @@
 </footer>
 <script src="{{  asset('assets/vendors/popper.js/popper.min.js') }} "></script>
 <script src="{{  asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }} "></script>
-<script src="{{  asset('assets/vendors/aos/aos.js') }} "></script>
+
 <script src="{{  asset('assets/js/main.js') }} "></script>
 <script>
     AOS.init({
